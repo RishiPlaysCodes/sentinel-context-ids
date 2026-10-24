@@ -1,0 +1,14 @@
+{
+  "name": "Sentinel Context IDS development and locked synthetic evaluation",
+  "version": "3.0",
+  "development_seeds": {"train":42,"probability_calibration":43,"conformal_calibration":44,"validation":45},
+  "final_seed":20261025,
+  "final_episodes_per_class":60,
+  "final_domain_shift":"duration x U(0.6,1.5), packets x U(0.7,1.4), packet-size x U(0.85,1.12)",
+  "primary_metric":"all-row multiclass macro F1; no exclusion of reviewed rows",
+  "secondary_metrics":["class accuracy","binary alert precision/recall/FPR","review rate","accepted coverage and accuracy","episode-bootstrap accuracy intervals","Brier score","prediction-set coverage"],
+  "comparators":["frozen v2 hybrid","new core-only calibrated ensemble","new contextual ensemble without rules","full contextual policy"],
+  "legacy_stress_status":"previously observed diagnostic; not an untouched test",
+  "final_use":"Generate only after fitting and persisting all development-selected parameters; do not select models on final results.",
+  "novelty_claim":"Integration and reproducible experiments, not a claim of world-first algorithms."
+}

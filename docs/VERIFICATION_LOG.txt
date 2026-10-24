@@ -1,0 +1,34 @@
+Date: 25 October 2026 (Asia/Calcutta)
+Runtime: isolated Python 3.13.9, pinned direct dependencies.
+Already completed: development freeze, locked evaluation, metric-reporting clarification and nine-condition benchmark.
+
+COMMAND: python -m pip check
+EXIT: 0
+No broken requirements found.
+
+COMMAND: python -m pytest -q --basetemp [workspace]\work\research-final-pytest
+EXIT: 0
+.......................................................                  [100%]
+55 passed in 30.09s
+
+COMMAND: python run_ids.py detect data/example_unlabeled.csv --output [workspace]\work\research-cli-result.csv
+EXIT: 0
+[workspace]\work\research-cli-result.csv
+
+COMMAND: python run_ids.py pcap data/offline_example.pcap --output [workspace]\work\research-pcap-result.csv
+EXIT: 0
+{
+  "packets_read": 17,
+  "unsupported_packets": 0,
+  "fragmented_packets": 0,
+  "malformed_packets": 0,
+  "wire_truncated_packets": 0,
+  "limit_reached": false,
+  "authentication_evidence": "unavailable",
+  "duration_floor_seconds": 1e-06,
+  "flows": 14,
+  "context_unit": "directional observed five-tuple/bucket records, not unique TCP handshakes",
+  "limits": "No payload inspection, retransmission deduplication, IP fragment reassembly, or authentication outcomes."
+}
+[workspace]\work\research-pcap-result.csv
+WARNING: No libpcap provider available ! pcap won't be used
