@@ -1,0 +1,16 @@
+{
+  "timing_includes": "CSV-frame validation, features, calibrated ensemble, novelty score, evidence rules and explanations",
+  "excludes": "CSV read and temporal aggregation: supplied context is reused for this inference workload",
+  "not_measured": [
+    "live packet loss",
+    "victim availability",
+    "network latency",
+    "sustained link throughput"
+  ],
+  "warmup_rows": 10,
+  "sample_seeds": [
+    700,
+    701
+  ],
+  "population": "development validation; no efficacy claim from benchmark"
+}

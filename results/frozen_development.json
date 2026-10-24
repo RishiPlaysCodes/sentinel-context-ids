@@ -1,0 +1,138 @@
+{
+  "study_plan_sha256": "caa942d404b755d0990e0a4ce6c9c2e37a05fa2a8655a848d24a3d1b92a80536",
+  "development_data_sha256": {
+    "train": "9d83092943607f3d6649ce0e9231386d93194da62dbc9230c4d7df4980b359ed",
+    "probability_calibration": "1efb93fbbdfefce765f32a073384e758b9719172fe73e902e7111f2bb8fe1a17",
+    "conformal_calibration": "9bc4cebc20c02ced71b2a01e2740362ab3760e645da0c9f0ce61bf8b6bf19301",
+    "validation": "9653af6d0d3083524579da11c3fe5b0d1ae6e5f04e1ae39d1b58edbd98c4a208"
+  },
+  "models": {
+    "core_ensemble": {
+      "sha256": "d9fa11f829fa1251ef89b89904e2b9d9e9acaba2b058fc4e7bc72e45f7fd6577",
+      "parameters": {
+        "model_format": 3,
+        "classes": [
+          "benign",
+          "brute_force",
+          "dos",
+          "port_scan"
+        ],
+        "features": [
+          "flow_duration_s",
+          "packets",
+          "bytes",
+          "syn_count",
+          "ack_count",
+          "rst_count",
+          "failed_logins",
+          "unique_dst_ports_60s",
+          "connections_60s",
+          "packet_rate",
+          "byte_rate",
+          "avg_packet_size",
+          "syn_ratio",
+          "ack_ratio",
+          "rst_ratio",
+          "is_auth_service",
+          "ports_per_connection",
+          "packets_per_connection",
+          "failure_rate",
+          "auth_available"
+        ],
+        "training_sessions": 320,
+        "training_rows": 3840,
+        "probability_calibration_rows": 1152,
+        "conformal_calibration_sessions": 96,
+        "validation_rows": 1152,
+        "conformal_alpha": 0.1,
+        "review_threshold": 0.5,
+        "novelty_cutoff": -0.5785508389803545,
+        "hyperparameters": {
+          "forest_trees": 220,
+          "extra_trees": 220,
+          "novelty_trees": 160
+        },
+        "final_test_used_for_fitting": false
+      }
+    },
+    "context_ensemble": {
+      "sha256": "926f594ebaea8f889fd0750f978314c40ffcf96781ae5cd983cd05cbcf803f04",
+      "parameters": {
+        "model_format": 3,
+        "classes": [
+          "benign",
+          "brute_force",
+          "dos",
+          "port_scan"
+        ],
+        "features": [
+          "flow_duration_s",
+          "packets",
+          "bytes",
+          "syn_count",
+          "ack_count",
+          "rst_count",
+          "failed_logins",
+          "unique_dst_ports_60s",
+          "connections_60s",
+          "packet_rate",
+          "byte_rate",
+          "avg_packet_size",
+          "syn_ratio",
+          "ack_ratio",
+          "rst_ratio",
+          "is_auth_service",
+          "ports_per_connection",
+          "packets_per_connection",
+          "failure_rate",
+          "auth_available",
+          "unique_dst_ports_300s",
+          "connections_300s",
+          "port_entropy_300s",
+          "new_port_fraction_300s",
+          "service_rate_ratio",
+          "temporal_available"
+        ],
+        "training_sessions": 320,
+        "training_rows": 3840,
+        "probability_calibration_rows": 1152,
+        "conformal_calibration_sessions": 96,
+        "validation_rows": 1152,
+        "conformal_alpha": 0.1,
+        "review_threshold": 0.5,
+        "novelty_cutoff": -0.5888935252109704,
+        "hyperparameters": {
+          "forest_trees": 220,
+          "extra_trees": 220,
+          "novelty_trees": 160
+        },
+        "final_test_used_for_fitting": false
+      }
+    }
+  },
+  "decision_code_sha256": {
+    "data.py": "6ef63c9b56b87577c20fee6da22b53ade89c83f8628e43e2a8aeb6191df01617",
+    "features.py": "37165a7fece34327c5e8b7caa479278d0bf699716934486c4bf6b3a445b1fe00",
+    "model.py": "4981172463d17551a3f374d9acceefb047f62fe0dd4922c6e756d4886c72a56f",
+    "rules.py": "4d029ba328e0a71baffa45a2d2cb19b7806f61c7c86b9e36a7d014e41cacc707",
+    "temporal.py": "a2d8cdee74cf8a55ab835d7b6d4307047fd3dffd72a2db3b5506e2ed121de8d5"
+  },
+  "final_data_generated_in_this_step": false,
+  "formatting_only_provenance": {
+    "before": {
+      "data.py": "db26a8f0dc48e5f9d25c90ac431f99792d5f4f0cad953b0b59fc62c8799a0824",
+      "features.py": "6cefda82eb83e42064e94f750e27df7379ac5c7c2d02294ed225f0b595ebc65e",
+      "model.py": "1f74ee9afb0f2f7590de33d8ce80a002ee283207941602529f86793204b620a5",
+      "rules.py": "b6cef00317905e2ce113bfc6d2e1dd2f7689a6648e86c808f62796f9c620e35b",
+      "temporal.py": "17f352067933bcf22518f103967db1fff7d7129a308da91c255954a4d1e440b2"
+    },
+    "ast_sha256": {
+      "data.py": "5db863042e62356cf73ffeb336ee7349d43ad24e5aefe491eb0ffdcde3a66f53",
+      "features.py": "2851a81d1f1131734312f9ac0575829b102c40e2d81259a048a283af7386c872",
+      "model.py": "d99c23f595351434c0c168cdf1cb2e4463eaacfa60b28423b6ff3a6ced59d089",
+      "rules.py": "ee812e2fd1129e456a004996b089aa9e3fc60d3984721b1091d34d0e5f72721b",
+      "temporal.py": "c81a662be8a1661a840ffd7534f0634e875d27723c5e76195b0d712d8ec3e860"
+    },
+    "note": "Black formatting after initial evaluation; AST and model artifacts unchanged. No decision or parameter tuning."
+  }
+}
