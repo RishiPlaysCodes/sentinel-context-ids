@@ -1,0 +1,17 @@
+name: Research verification
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - run: python -m pip install -r requirements-dev.txt
+      - run: python -m black --check sentinel tests app.py run_ids.py
+      - run: python -m ruff check --select E9,F63,F7,F82 .
+      - run: python -m pip check
+      - run: python run_ids.py build
+      - run: python -m pytest -q
