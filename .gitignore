@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+*.log
+.streamlit/secrets.toml
+artifacts/*.joblib
+baselines/*.joblib
+data/*.csv
+data/*.pcap
+data/*.pcapng
+!data/example_unlabeled.csv
+results/*.csv
+results/*.joblib
+results/*.png
+!results/comparison.csv
+!results/benchmark.csv
