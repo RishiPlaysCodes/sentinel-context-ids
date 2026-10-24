@@ -1,0 +1,5 @@
+flow_duration_s,packets,bytes,syn_count,ack_count,rst_count,failed_logins,unique_dst_ports_60s,connections_60s,dst_port
+51.558296,1162,1204809,15,1148,17,0,1,1,80
+4.204553,65,3617,45,10,8,0,1,1,35148
+4.517399,4657,603544,1928,433,67,0,1,1,443
+33.108589,312,89683,16,265,26,12,1,2,22
